@@ -10,7 +10,7 @@ import { Seat, Student, FeeRecord, AttendanceRecord, Enquiry, Notice, LibrarySet
 dbStore.get();
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || "library-seat-secret-key-123";
 
 app.use(express.json());
