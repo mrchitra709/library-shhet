@@ -59,15 +59,6 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess, onBackTo
           <p className="text-xs text-slate-450">Login with credentials to access workspace dashboard controls.</p>
         </div>
 
-        {/* Demo info note */}
-        <div className="p-3 bg-indigo-50/50 border border-indigo-100 rounded-xl text-[11px] text-indigo-900 space-y-1">
-          <p className="font-bold">🔑 System Default Credentials:</p>
-          <div className="flex justify-between font-mono">
-            <span>Username: <strong className="text-indigo-950 select-all">admin</strong></span>
-            <span>Password: <strong className="text-indigo-950 select-all">admin</strong></span>
-          </div>
-        </div>
-
         {/* Errors */}
         {error && (
           <div className="p-3 bg-red-50 border border-red-200 text-red-800 text-xs rounded-xl flex items-start space-x-2">

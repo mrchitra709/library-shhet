@@ -114,65 +114,7 @@ export const PublicHome: React.FC<PublicHomeProps> = ({
               </button>
             </div>
 
-            {/* Live Available Seats Banner */}
-            <div className="bg-slate-50 border border-slate-100 p-4 rounded-2xl max-w-xl space-y-3 shadow-3xs">
-              <div className="flex items-center justify-between">
-                <h4 className="text-xs font-bold text-slate-700 tracking-wider uppercase flex items-center gap-1.5">
-                  <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
-                  <span>Live Seat Availability:</span>
-                </h4>
-                <button 
-                  onClick={() => loadStatsData()}
-                  disabled={isRefreshing}
-                  className="p-1 px-2 rounded-lg bg-white border border-slate-200 text-[10px] font-bold text-slate-600 hover:text-indigo-650 hover:bg-slate-50 transition flex items-center gap-1 cursor-pointer disabled:opacity-60"
-                  title="Click to manual sync seat data"
-                >
-                  <RefreshCw className={`w-2.5 h-2.5 ${isRefreshing ? 'animate-spin text-indigo-650' : ''}`} />
-                  <span>{isRefreshing ? 'Syncing...' : 'Sync Now'}</span>
-                </button>
-              </div>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-                <div className="p-3 bg-white border border-emerald-100 rounded-xl shadow-2xs flex flex-col justify-between">
-                  <div>
-                    <span className="text-[9px] font-sans font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100/50 px-1.5 py-0.5 rounded-md">🟢 Full Day Open</span>
-                    <p className="text-xl sm:text-2xl font-sans font-black text-slate-900 mt-1.5">
-                      {liveStats.availableFullDaySeats !== undefined ? liveStats.availableFullDaySeats : 0}
-                    </p>
-                  </div>
-                  <p className="text-[10px] text-slate-500 font-medium mt-1">Full-Day Seats Free</p>
-                </div>
 
-                <div className="p-3 bg-white border border-indigo-100 rounded-xl shadow-2xs flex flex-col justify-between">
-                  <div>
-                    <span className="text-[9px] font-sans font-bold uppercase tracking-wider text-indigo-800 bg-indigo-50 border border-indigo-100/50 px-1.5 py-0.5 rounded-md">🔵 Half Day Open</span>
-                    <p className="text-xl sm:text-2xl font-sans font-black text-slate-900 mt-1.5">
-                      {liveStats.availableHalfDaySeats !== undefined ? liveStats.availableHalfDaySeats : 0}
-                    </p>
-                  </div>
-                  <p className="text-[10px] text-slate-500 font-medium mt-1">Shift Slots Free</p>
-                </div>
-
-                <div className="p-3 bg-white border border-rose-100 rounded-xl shadow-2xs flex flex-col justify-between">
-                  <div>
-                    <span className="text-[9px] font-sans font-bold uppercase tracking-wider text-rose-800 bg-rose-50 border border-rose-100/50 px-1.5 py-0.5 rounded-md">🔴 Occupied Seats</span>
-                    <p className="text-xl sm:text-2xl font-sans font-black text-slate-900 mt-1.5">
-                      {liveStats.occupiedSeats !== undefined ? liveStats.occupiedSeats : 0}
-                    </p>
-                  </div>
-                  <p className="text-[10px] text-slate-500 font-medium mt-1">Un-available Seats</p>
-                </div>
-
-                <div className="p-3 bg-white border border-slate-200 rounded-xl shadow-2xs flex flex-col justify-between">
-                  <div>
-                    <span className="text-[9px] font-sans font-bold uppercase tracking-wider text-slate-700 bg-slate-100 border border-slate-200/50 px-1.5 py-0.5 rounded-md">Total Pool</span>
-                    <p className="text-xl sm:text-2xl font-sans font-black text-slate-900 mt-1.5">
-                      {liveStats.totalSeats || 103}
-                    </p>
-                  </div>
-                  <p className="text-[10px] text-slate-500 font-medium mt-1">Physical Seats</p>
-                </div>
-              </div>
-            </div>
 
             {/* Timings summary */}
             <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-sm text-slate-500 border-t border-slate-100 pt-6">
